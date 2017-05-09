@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "12310101873",
+    "firebase_url": "https://hockeygoal-8cc1e.firebaseio.com",
+    "project_id": "hockeygoal-8cc1e",
+    "storage_bucket": "hockeygoal-8cc1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12310101873:android:3d5fcfa9b0b53f4c",
+        "android_client_info": {
+          "package_name": "google.codelab.hockeygoal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12310101873-1enii1ke2u69qv157l08dgpcr1o03mn9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "google.codelab.hockeygoal",
+            "certificate_hash": "c0d931f1e6f8eaf2211d2d78c8e30c8210a4aac4"
+          }
+        },
+        {
+          "client_id": "12310101873-4d7ns4n8kn2f61pc3likr0kmm38rnrmq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARXjO3XQV1vrupSG08Go_ggDB5Vq8KhW4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12310101873-4d7ns4n8kn2f61pc3likr0kmm38rnrmq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
