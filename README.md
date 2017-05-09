@@ -42,4 +42,22 @@ int cacheExpiration = (BuildConfig.DEBUG)?  0 : 3600; // Cache is invalid after 
   - Run the code on the phone
     - You should see changed text of the button second time you run the app (it's correct behavior, we don't want to change UI to the user on the fly)
     
-
+## Integrate it with Firebase Analytics
+  - Click `Tools-Firebase` in Android Studio
+  - Select Analytics and "Log Analytics event" from the menu
+  - Follow "Add Analytics to your app"
+    - Use Android Studio quick fix to add required permissions
+  - Follow "Log events"
+    - Log event when user clicks GOAL button
+      - use "play" as value, null bundle
+    - Log event when user clicks STOP button
+      - use "stop" as value, null bundle
+  - Run command `adb shell setprop debug.firebase.analytics.app google.codelab.hockeygoal`. It enables instant sending of analytics events to the console (otherwise there is 24 hour delay)
+  - Go to Firebase Console, check out StreamView and DebugView - you should see some events there
+  - Go to User Properties in Firebase Console/Analytics
+  - Create new property called "button_text"
+  - Add this code to `Activity#onCreate`:
+    - `mFirebaseAnalytics.setUserProperty("button_text", mFirebaseRemoteConfig.getString("button_text"));`
+  - Launch the app and make sure the property is set in DebugView
+  - Now you could filter all Analytics reports based on user property and compare how users are behaving based on which button text they have. But data will be available only after 24 hours from SDK integration.
+  
