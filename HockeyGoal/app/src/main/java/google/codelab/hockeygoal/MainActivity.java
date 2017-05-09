@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
@@ -18,11 +19,13 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer mPlayer;
     private Button mButton;
     private FirebaseRemoteConfig mFirebaseRemoteConfig;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         mFirebaseRemoteConfig.setDefaults(R.xml.remote_config_defaults);
         mFirebaseRemoteConfig.setConfigSettings(new FirebaseRemoteConfigSettings.Builder()
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 playSoundOrStop();
             }
         });
+        mFirebaseAnalytics.setUserProperty("button_text", mFirebaseRemoteConfig.getString("button_text"));
     }
 
     @Override
@@ -67,9 +71,11 @@ public class MainActivity extends AppCompatActivity {
         if (mPlayer.isPlaying()) {
             mPlayer.pause();
             mButton.setText(getButtonText());
+            mFirebaseAnalytics.logEvent("stop", null);
         } else {
             mPlayer.start();
             mButton.setText("STOP");
+            mFirebaseAnalytics.logEvent("play", null);
         }
     }
 
