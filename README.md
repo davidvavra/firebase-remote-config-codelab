@@ -27,7 +27,8 @@ Codelab for Launchpad Build Prague about Firebase Remote Config, Android, Analyt
       - name "goal!!", random percentile, `<33.33% AND <=66.66%`, value "GOAL!!"
       - name "goal!!!", random percentile, `<66.66%`, value "GOAL!!!"
   - Folow instructions "Fetch and activate values from the server"
-    - add following code to `Activity#onCreate` to make sure you get fresh data in debug builds:
+    - add the fetch code from the instructions to `Activity#onCreate`
+    - add following code before that to make sure you get fresh data in debug builds:
     
 ```
 mFirebaseRemoteConfig.setConfigSettings(new FirebaseRemoteConfigSettings.Builder()
@@ -35,7 +36,7 @@ mFirebaseRemoteConfig.setConfigSettings(new FirebaseRemoteConfigSettings.Builder
                      .build());
 int cacheExpiration = (BuildConfig.DEBUG)?  0 : 3600; // Cache is invalid after an hour in production
 ```
-    - add the fecch code from the instructions to `Activity#onCreate`
+    
   - Folow instructions "Get parameter values to use in your app"
     - add the code to method `getButtonText`
   - Run the code on the phone
