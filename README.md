@@ -47,7 +47,7 @@ int cacheExpiration = (BuildConfig.DEBUG)?  0 : 3600; // Cache is invalid after 
   - Run the code on the phone
     - You should see changed text of the button second time you run the app (it's correct behavior, we don't want to change UI to the user on the fly)
     
-## Integrate it with Firebase Analytics
+## 3. Integrate it with Firebase Analytics
   - Click `Tools-Firebase` in Android Studio
   - Select Analytics and "Log Analytics event" from the menu
   - Follow "Add Analytics to your app"
