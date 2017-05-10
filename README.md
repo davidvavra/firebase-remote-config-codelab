@@ -23,9 +23,10 @@ Codelab for Launchpad Build Prague about Firebase Remote Config, Android, Analyt
   - Folow instructions "Set parameter values on the server"
     - parameter key is "button_text", default value is "GOAL"
     - add three conditions:
-      - name "goal!", random percentile, `<=33.33%`, value "GOAL!"
+      - name "goal!", random percentile, `<33.33%`, value "GOAL!"
       - name "goal!!", random percentile, `>=33.33% AND <66.66%`, value "GOAL!!"
       - name "goal!!!", random percentile, `>=66.66%`, value "GOAL!!!"
+      - (don't forget to click 'Publish' button :)
   - Folow instructions "Fetch and activate values from the server"
     - add the fetch code from the instructions to `MainActivity#onCreate`
     - add following code before that to make sure you get fresh data in debug builds:
