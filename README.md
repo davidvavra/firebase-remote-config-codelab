@@ -1,5 +1,9 @@
-# firebase-remote-config-codelab
-Codelab for Launchpad Build Prague about Firebase Remote Config, Android, Analytics and Ice Hockey
+# Firebase Remote Config Codelab
+This codelab which will show you how to integrate [Firebase Remote Config](https://firebase.google.com/docs/remote-config/) into your app and use it for A/B testing. Then you will learn how to measure results of A/B testing in [Firebase Analytics](https://firebase.google.com/docs/analytics/).
+
+The sample app is for hockey fans - it plays a goal sound after you press a button. Text on the button is A/B tested.
+
+The codelab was prepared originally for Lauchpad Build Prague (May 2017) event. It took attendees about 40 minutes to complete.
 
 ## Prerequisites
 
