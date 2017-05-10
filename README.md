@@ -57,7 +57,7 @@ int cacheExpiration = (BuildConfig.DEBUG)?  0 : 3600; // Cache is invalid after 
   - Go to Firebase Console, check out StreamView and DebugView - you should see some events there
   - Go to User Properties in Firebase Console/Analytics
   - Create new property called "button_text"
-  - Add this code to `Activity#onCreate`:
+  - Add this code to `MainActivity#onCreate`:
     - `mFirebaseAnalytics.setUserProperty("button_text", mFirebaseRemoteConfig.getString("button_text"));`
   - Launch the app and make sure the property is set in DebugView
   - Now you could filter all Analytics reports based on user property and compare how users are behaving based on which button text they have. But data will be available only after 24 hours from SDK integration.
